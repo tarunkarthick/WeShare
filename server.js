@@ -9,7 +9,7 @@ const cookieParser=require('cookie-parser')
 const expressValidator=require('express-validator')
 const fs=require('fs')
 const cors=require('cors')
-const path = require('path') 
+const path=require('path')
 const dotenv=require('dotenv')
 dotenv.config()
 
@@ -53,9 +53,9 @@ app.use(expressValidator())
 
 app.use(cors())
 
-app.use("/api",postRoutes)
-app.use("/api",authRoutes)
-app.use("/api",userRoutes)
+app.use("/",postRoutes)
+app.use("/",authRoutes)
+app.use("/",userRoutes)
 
 
 app.use(function (err, req, res, next) {
