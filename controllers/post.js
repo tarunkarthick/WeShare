@@ -13,8 +13,7 @@ exports.postById=(req,res,next,id)=>{
                 error:err
             })
         }
-        req.post=post
-        
+        req.post=post        
         next()
     })
 }
