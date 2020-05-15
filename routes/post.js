@@ -7,29 +7,29 @@ const {createPostValidator}=require('../validator')
 
 const router=express.Router()
 
-router.get("/posts",postController.getPosts)
+router.get("/api/posts",postController.getPosts)
 
-router.put("/post/like",requireSignin,postController.like)
+router.put("/api/post/like",requireSignin,postController.like)
 
-router.put("/post/unlike",requireSignin,postController.unlike)
+router.put("/api/post/unlike",requireSignin,postController.unlike)
 
-router.put("/post/comment",requireSignin,postController.comment)
+router.put("/api/post/comment",requireSignin,postController.comment)
 
-router.put("/post/uncomment",requireSignin,postController.uncomment)
+router.put("/api/post/uncomment",requireSignin,postController.uncomment)
 
 
 
-router.get("/posts/by/:userId",requireSignin,postController.postsByUser)
+router.get("/api/posts/by/:userId",requireSignin,postController.postsByUser)
 
-router.get("/post/:postId",postController.singlePost)
+router.get("/api/post/:postId",postController.singlePost)
 
-router.post("/post/new/:userId",requireSignin,postController.createPost,createPostValidator)
+router.post("/api/post/new/:userId",requireSignin,postController.createPost,createPostValidator)
 
-router.delete("/post/:postId",requireSignin,postController.isPoster,postController.deletePost)
+router.delete("/api/post/:postId",requireSignin,postController.isPoster,postController.deletePost)
 
-router.put("/post/:postId",requireSignin,postController.isPoster,postController.updatePost)
+router.put("/api/post/:postId",requireSignin,postController.isPoster,postController.updatePost)
 
-router.get("/post/photo/:postId",postController.photo)
+router.get("/api/post/photo/:postId",postController.photo)
 
 
 

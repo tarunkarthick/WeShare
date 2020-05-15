@@ -7,15 +7,15 @@ const {userSignupValidator,passwordResetValidator}=require('../validator')
 const router=express.Router()
 
 
-router.post("/signup",userSignupValidator,signup)
-router.post("/signin",signin)
+router.post("/api/signup",userSignupValidator,signup)
+router.post("/api/signin",signin)
 //signout
-router.get("/signout",signout)
+router.get("/api/signout",signout)
 
-router.put("/forgot-password", forgotPassword);
-router.put("/reset-password", passwordResetValidator, resetPassword);
+router.put("/api/forgot-password", forgotPassword);
+router.put("/api/reset-password", passwordResetValidator, resetPassword);
 
-router.post("/social-login", socialLogin); 
+router.post("/api/social-login", socialLogin); 
 
 
 //any route containing :userId our app will first execute userById()
