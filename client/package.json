@@ -33,7 +33,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy":"http://localhost:3001/",
+  "proxy":"https://localhost:3001/",
   "devDependencies": {
     "terser": "^3.14.1"
   }
