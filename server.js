@@ -57,21 +57,6 @@ app.use("/",postRoutes)
 app.use("/",authRoutes)
 app.use("/",userRoutes)
 
-app.use(function (req, res, next){
-  if (req.headers['x-forwarded-proto'] === 'https') {
-    res.redirect('https://' + req.hostname + req.url);
-  } else {
-    next();
-  }
-});
-
-
-app.use(function (err, req, res, next) {
-    if (err.name === 'UnauthorizedError') {
-      res.status(401).json({error:"Unauthorized!"});
-    }
-  });
-
   if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build')); // serve the static react app
     app.get('*',(req,res)=>{
